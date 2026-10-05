@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var character_direction : Vector2
 var character_speed := 4000
+var score : int = 0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 # the "\" just breaks this long line of code to snipets. probably bad practice lol
@@ -40,3 +41,8 @@ func _physics_process(delta: float) -> void:
 		
 	
 	move_and_slide()
+
+
+func _on_coin_coin_touched() -> void:
+	score += 1
+	print("coins: ",score)
