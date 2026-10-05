@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bm3uak4fg01f4" path="res://coin.tscn" id="1_m7ahb"]
 [ext_resource type="Texture2D" uid="uid://c7l1rs646edcg" path="res://assets/tilemap/environment.png" id="1_wwpf4"]
 [ext_resource type="PackedScene" uid="uid://bgh6ciowlrfmf" path="res://scenes/player.tscn" id="2_wwpf4"]
+[ext_resource type="PackedScene" uid="uid://beooht1iyrv8u" path="res://UI.tscn" id="3_dwgg1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7ahb"]
 texture = ExtResource("1_wwpf4")
@@ -106,23 +107,25 @@ position = Vector2(379, 249)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=332301586]
 zoom = Vector2(2.45, 2.45)
 
+[node name="CanvasLayer" parent="Player/Camera2D" unique_id=656647733 instance=ExtResource("3_dwgg1")]
+
 [node name="coin" parent="." unique_id=761356455 instance=ExtResource("1_m7ahb")]
-position = Vector2(284, 204)
+position = Vector2(279, 202)
 rotation = -3.1415925
 
 [node name="coin2" parent="." unique_id=490262529 instance=ExtResource("1_m7ahb")]
-position = Vector2(265, 216)
+position = Vector2(288, 239)
 rotation = -3.1415925
 
-[node name="coin3" parent="." unique_id=1577284738 instance=ExtResource("1_m7ahb")]
-position = Vector2(304, 185)
+[node name="coin3" parent="." unique_id=1771418567 instance=ExtResource("1_m7ahb")]
+position = Vector2(307, 189)
 rotation = -3.1415925
 
-[node name="coin4" parent="." unique_id=497095081 instance=ExtResource("1_m7ahb")]
-position = Vector2(312, 212)
+[node name="coin4" parent="." unique_id=1409522358 instance=ExtResource("1_m7ahb")]
+position = Vector2(325, 209)
 rotation = -3.1415925
 
-[connection signal="coin_touched" from="coin" to="Player" method="_on_coin_coin_touched"]
-[connection signal="coin_touched" from="coin2" to="Player" method="_on_coin_coin_touched"]
-[connection signal="coin_touched" from="coin3" to="Player" method="_on_coin_coin_touched"]
-[connection signal="coin_touched" from="coin4" to="Player" method="_on_coin_coin_touched"]
+[connection signal="coin_touched" from="coin" to="Player/Camera2D/CanvasLayer" method="_on_coin_coin_touched"]
+[connection signal="coin_touched" from="coin2" to="Player/Camera2D/CanvasLayer" method="_on_coin_coin_touched"]
+[connection signal="coin_touched" from="coin3" to="Player/Camera2D/CanvasLayer" method="_on_coin_coin_touched"]
+[connection signal="coin_touched" from="coin4" to="Player/Camera2D/CanvasLayer" method="_on_coin_coin_touched"]
