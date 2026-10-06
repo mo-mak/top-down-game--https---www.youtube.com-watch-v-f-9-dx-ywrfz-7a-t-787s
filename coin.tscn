@@ -23,6 +23,15 @@ animations = [{
 radius = 3.0
 height = 10.0
 
+[sub_resource type="Gradient" id="Gradient_v7riw"]
+offsets = PackedFloat32Array(0, 0.5301205)
+colors = PackedColorArray(1, 0.89140534, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g4v7s"]
+gradient = SubResource("Gradient_v7riw")
+fill = 1
+fill_from = Vector2(0.47391304, 0.45652175)
+
 [node name="Area2D" type="Area2D" unique_id=490262529]
 script = ExtResource("1_0t63x")
 
@@ -34,5 +43,9 @@ shape = SubResource("CapsuleShape2D_g4v7s")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=734467650]
 stream = ExtResource("3_v7riw")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=150793974]
+energy = 0.5
+texture = SubResource("GradientTexture2D_g4v7s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

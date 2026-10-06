@@ -125,11 +125,6 @@ rotation = -3.1415925
 position = Vector2(325, 209)
 rotation = -3.1415925
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1216169046]
-color = Color(0.98008555, 0.98008555, 0.98008555, 1)
-energy = 0.56
-blend_mode = 1
-
 [connection signal="coin_touched" from="coin" to="Player/Camera2D/CanvasLayer" method="_on_coin_coin_touched"]
 [connection signal="coin_touched" from="coin2" to="Player/Camera2D/CanvasLayer" method="_on_coin_coin_touched"]
 [connection signal="coin_touched" from="coin3" to="Player/Camera2D/CanvasLayer" method="_on_coin_coin_touched"]
